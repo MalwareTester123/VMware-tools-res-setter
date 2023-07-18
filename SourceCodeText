@@ -1,0 +1,14 @@
+@echo off
+rem More info at https://kb.vmware.com/s/article/2058577
+title Force Resolution for VMware Guests, Single Display
+echo.
+echo This tool forces resolutions for VMware guests. For higher resolutions, refer to VMware documentation.
+echo.
+echo To revert to the default resolution list, disable the driver (VMware SVGA 3D) in Device Manager and then enable it again.
+echo.
+echo.
+set /p width=Width: 
+set /p height=Height: 
+echo Resolution entered: %width% x %height%
+pause
+"%ProgramFiles%\VMware\VMware Tools\VMwareResolutionSet.exe" 0 1 , 0 0 %width% %height%
